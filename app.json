@@ -1,0 +1,34 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/test/test",
+    "pages/movie/movie",
+    "pages/cinema/cinema"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#D53E37",
+    "backgroundColor": "#F5F5F5",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "movie",
+        "iconPath": "images/phone1.png",
+        "selectedIconPath": "images/phone2.png"
+      },
+      {
+        "pagePath": "pages/cinema/cinema",
+        "text": "cinema",
+        "iconPath": "images/phone1.png",
+        "selectedIconPath": "images/phone2.png"
+      }
+    ]
+  }
+}
