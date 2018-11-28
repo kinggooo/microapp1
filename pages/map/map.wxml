@@ -1,0 +1,9 @@
+<view class="container">
+  <view>
+    <map id="mp1" latitude="{{mapData.latitude}}" longitude="{{mapData.longitude}}"></map>
+  </view>
+  <view wx:for="{{arr}}">
+    {{index}}: {{item}}
+  </view>
+
+</view>
