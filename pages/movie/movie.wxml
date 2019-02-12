@@ -1,2 +1,17 @@
-<!--pages/movie/movie.wxml-->
-<text>pages/movie/movie.wxml</text>
+<view class="container">
+  <view class="playerInfo">
+    <view class="player">
+      <input id='p1' bindinput="bindKeyInput" placeholder="输入姓名" /> score:<input id='score1' value='0' disabled='true'/>
+    </view>
+    <view class="player">
+      <input id='p2' bindinput="bindKeyInput" placeholder="输入姓名" /> score: <input id='score2' value='0' disabled='true'/>
+    </view>
+    <view class="player">
+      <input id='p3' bindinput="bindKeyInput" placeholder="输入姓名" /> score: <input id='score3' value='0' disabled='true'/>
+    </view>
+    <view class="player">
+      <input id='p4' bindinput="bindKeyInput" placeholder="输入姓名" /> score: <input id='score4' value='0' disabled='true'/>
+    </view>
+  </view>
+  <view class="section__title">你输入的是：{{inputValue}}</view>
+</view>

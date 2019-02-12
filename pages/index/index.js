@@ -50,5 +50,8 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  chText: function() {
+    this.setData({ motto: 'Hello Sod'})
   }
 })

@@ -1,1 +1,3 @@
-/* pages/movie/movie.wxss */
+.player {
+  display: flex;
+}

@@ -9,5 +9,6 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+    <button bindtap="chText"> 修改文本 </button>
   </view>
 </view>
