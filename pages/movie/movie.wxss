@@ -1,3 +1,38 @@
+.container1 {
+  font: 15px arial, sans-serif;
+}
+
+.playerInfo {
+  border: 1px solid black;
+}
+
 .player {
+  /* border: 3px solid red; */
   display: flex;
+  margin: 2px;
+  align-items: center;
+}
+
+.player .pname {
+  width: 80px;
+  border: 1px solid black;
+  margin: 2px;
+}
+
+/* .player > text {
+  border: 1px solid black;
+} */
+
+.btn {
+  border: 1px solid black;
+  margin: 10px;
+  display: flex;
+  float: left;
+  align-items: center;
+}
+
+.btn > button {
+  width: 80px;
+  margin-left: 5px;
+  font: 16px arial, sans-serif;
 }

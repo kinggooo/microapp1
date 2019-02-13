@@ -1,17 +1,16 @@
-<view class="container">
+<view class="container1">
   <view class="playerInfo">
-    <view class="player">
-      <input id='p1' bindinput="bindKeyInput" placeholder="输入姓名" /> score:<input id='score1' value='0' disabled='true'/>
-    </view>
-    <view class="player">
-      <input id='p2' bindinput="bindKeyInput" placeholder="输入姓名" /> score: <input id='score2' value='0' disabled='true'/>
-    </view>
-    <view class="player">
-      <input id='p3' bindinput="bindKeyInput" placeholder="输入姓名" /> score: <input id='score3' value='0' disabled='true'/>
-    </view>
-    <view class="player">
-      <input id='p4' bindinput="bindKeyInput" placeholder="输入姓名" /> score: <input id='score4' value='0' disabled='true'/>
-    </view>
+    <radio-group bindchange="radioChange">
+      <view class="player" wx:for="{{players}}" wx:for-index="key">
+        <radio value="{{key}}" checked="{{item.checked}}" />
+        <input class="pname" id="{{key}}" bindinput="bindKeyInput" placeholder="{{item.name}}" />
+        <text decode="{{true}}">{{score}}</text>
+        <input value="{{item.score}}" disabled='true' />
+      </view>
+    </radio-group>
   </view>
-  <view class="section__title">你输入的是：{{inputValue}}</view>
+  <view class="btn">
+    <button bindtap='zimo'>按钮1</button>
+    <button bindtap='zhuachong'>按钮2</button>
+  </view>
 </view>
