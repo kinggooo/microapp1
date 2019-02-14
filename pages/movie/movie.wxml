@@ -10,7 +10,7 @@
     </radio-group>
   </view>
   <view class="btn">
-    <button bindtap='zimo'>按钮1</button>
-    <button bindtap='zhuachong'>按钮2</button>
+    <view><button bindtap='zimo'>按钮1</button></view>
+    <view><button bindtap='zhuachong'>按钮2</button></view>
   </view>
 </view>
