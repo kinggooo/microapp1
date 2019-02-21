@@ -3,9 +3,9 @@
     <radio-group bindchange="radioChange">
       <view class="player" wx:for="{{players}}" wx:for-index="key">
         <radio value="{{key}}" checked="{{item.checked}}" />
-        <input class="pname" id="{{key}}" bindinput="bindKeyInput" placeholder="{{item.name}}" />
-        <text decode="{{true}}">{{score}}</text>
-        <input value="{{item.score}}" disabled='true' />
+        <input class="pname" id="{{key}}" bindinput="bindInputPname" placeholder="{{item.name}}" />
+        <text decode="{{true}}">{{score}}{{item.score}}</text>
+        <!-- <input value="{{item.score}}" disabled='true' /> -->
       </view>
     </radio-group>
   </view>
@@ -18,6 +18,13 @@
     </view>
     <view>
       <button bindtap='zhuachong'>按钮2</button>
+    </view>
+    <view>
+      <picker bindchange="bindPickerChange" value="{{key}}" range="{{players}}" range-key="name">
+        <view class="picker">
+          当前选择：{{players[index]}}
+        </view>
+      </picker>
     </view>
   </view>
 </view>

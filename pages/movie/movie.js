@@ -34,21 +34,38 @@ Page({
     this.setData(obj)
   },
   bindInputPname(e) {
-    this.data.players[e.target.id].name = e.detail.value
+    // this.data.players[e.target.id].name = e.detail.value
+    var player = this.data.players[e.target.id]
+    player.name = e.detail.value
+    this.setData({
+      players: this.data.players
+    })
   },
   zimo(e) {
     var amt = this.data.amt
     var players = this.data.players
     for (var key in players) {
-      if (key == this.data.selectedPlayer){
-        console.log(players[key].name)
-        console.log(players[key].score)
+      if (key == this.data.selectedPlayer) {
+        players[key].score = Number(players[key].score) + Number(this.data.amt) * 3
+      } else {
+        players[key].score = Number(players[key].score) - Number(this.data.amt)
+      }
+    }
+    this.setData({
+      players: this.data.players
+    })
+  },
+  zhuachong(e) {
+    var amt = this.data.amt
+    var players = this.data.players
+    for (var key in players) {
+      if (key == this.data.selectedPlayer) {
         players[key].score = Number(players[key].score) + Number(this.data.amt)
       }
     }
-  },
-  zhuachong(e) {
-
+    this.setData({
+      players: this.data.players
+    })
   },
   radioChange(e) {
     // var name = this.data.players[e.detail.value].name

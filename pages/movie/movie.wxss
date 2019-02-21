@@ -44,7 +44,7 @@
 }
 .btn input {
   border: 3px solid red;
-  width: 80px;
+  width: 50px;
   font: 16px arial, sans-serif;
   margin-left: 5px;
 }
