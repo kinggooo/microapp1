@@ -1,31 +1,30 @@
 Page({
   data: {
-    players: {
-      "p1": {
+    players: [{
         name: 'CHN',
-        id: '1',
+        id: 'p1',
         score: '0',
         checked: 'true'
       },
-      "p2": {
+      {
         name: 'BRA',
-        id: '2',
+        id: 'p2',
         score: '0'
       },
-      "p3": {
+      {
         name: 'JPN',
-        id: '3',
+        id: 'p3',
         score: '0'
       },
-      "p4": {
+      {
         name: 'ENG',
-        id: '4',
+        id: 'p4',
         score: '0'
       }
-    },
+    ],
     inputValue: '',
     amt: '0',
-    selectedPlayer: 'p1',
+    selectedPlayer: '0',
     score: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score&nbsp;:&nbsp;"
   },
   bindKeyInput(e) {
@@ -35,7 +34,7 @@ Page({
   },
   bindInputPname(e) {
     // this.data.players[e.target.id].name = e.detail.value
-    var player = this.data.players[e.target.id]
+    var player = this.data.players[this.data.selectedPlayer]
     player.name = e.detail.value
     this.setData({
       players: this.data.players
@@ -70,6 +69,7 @@ Page({
   radioChange(e) {
     // var name = this.data.players[e.detail.value].name
     // console.log('radio发生change事件，携带value值为：', name)
+    e.target.checked = true
     this.setData({
       selectedPlayer: e.detail.value
     })

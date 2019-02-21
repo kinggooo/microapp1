@@ -2,7 +2,7 @@
   <view class="playerInfo">
     <radio-group bindchange="radioChange">
       <view class="player" wx:for="{{players}}" wx:for-index="key">
-        <radio value="{{key}}" checked="{{item.checked}}" />
+        <radio value="{{key}}" />{{key}}
         <input class="pname" id="{{key}}" bindinput="bindInputPname" placeholder="{{item.name}}" />
         <text decode="{{true}}">{{score}}{{item.score}}</text>
         <!-- <input value="{{item.score}}" disabled='true' /> -->
