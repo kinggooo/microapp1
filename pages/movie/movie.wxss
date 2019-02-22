@@ -3,7 +3,8 @@
 }
 
 .playerInfo {
-  border: 3px solid black;
+  /* border: 3px solid black; */
+  margin: 10px;
 }
 
 .player {
@@ -22,11 +23,20 @@
 /* .player > text {
   border: 1px solid black;
 } */
+.tableInfo {
+  /* border: 3px solid black; */
+}
+.table {
+  /* border: 3px solid red; */
+  display: flex;
+  margin: 10px;
+  align-items: center;
+}
 
 .btn {
   /* width: 300px; */
   /* border: 3px solid black; */
-  margin-top: 10px;
+  margin: 10px;
   display: flex;
   /* float: left; */
   /* flex-direction: row; */
@@ -37,14 +47,13 @@
 }
 
 .btn button {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   width: 80px;
   font: 16px arial, sans-serif;
   margin-left: 5px;
 }
-.btn input {
-  border: 3px solid red;
+.amt {
+  /* border: 3px solid red; */
   width: 50px;
   font: 16px arial, sans-serif;
-  margin-left: 5px;
 }

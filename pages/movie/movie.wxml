@@ -1,6 +1,6 @@
 <view class="container1">
   <view class="playerInfo">
-    <radio-group bindchange="radioChange">
+    <radio-group bindchange="winnerChange">
       <view class="player" wx:for="{{players}}" wx:for-index="key">
         <radio value="{{key}}" checked="{{key == winnerIdx}}" />
         <input class="pname" id="{{item.id}}" bindinput="bindPnameInput" placeholder="{{item.name}}" />
@@ -9,20 +9,31 @@
       </view>
     </radio-group>
   </view>
+  <view class="tableInfo">
+    <radio-group bindchange="rateChange">
+      <view class="table">
+        <text decode="{{true}}">{{text.tableAmt}}&nbsp;:&nbsp;{{tableAmt}}&nbsp;&nbsp;</text>
+        <radio value="single" checked="{{rate == 'single'}}" />
+        <text decode="{{true}}">{{text.single}}&nbsp;&nbsp;</text>
+        <radio value="double" checked="{{rate == 'double'}}" />
+        <text>{{text.double}}</text>
+      </view>
+    </radio-group>
+  </view>
   <view class="btn">
     <view>
-      <input id="amt" bindinput="bindKeyInput" placeholder="0" />
+      <input id="amt" class="amt" value="{{amt}}" bindinput="bindKeyInput" placeholder="{{text.amt}}" />
     </view>
     <view>
-      <button bindtap='zimo'>按钮1</button>
+      <button bindtap='zimo'>{{text.btn1}}</button>
     </view>
     <view>
-      <button bindtap='zhuachong'>按钮2</button>
+      <button bindtap='zhuachong'>{{text.btn2}}</button>
     </view>
     <view>
       <picker bindchange="bindPickerChange" value="{{loserIdx}}" range="{{players}}" range-key="name">
         <view class="picker">
-          当前选择：{{players[loserIdx].name}}
+          <text decode="{{true}}">&nbsp;&nbsp;{{text.loserSel}}：{{players[loserIdx].name}}</text>
         </view>
       </picker>
     </view>
