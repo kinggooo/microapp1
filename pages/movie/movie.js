@@ -56,7 +56,9 @@ Page({
         dftName: ['东', '南', '西', '北']
       }
     ],
-    cfgIdx: 0
+    cfgIdx: 0,
+    gameLog: [],
+    round: 0
   },
 
   onLoad: function() {
@@ -93,8 +95,14 @@ Page({
   zimo(e) {
     var winnerIdx = this.data.winnerIdx
     var amt = this.data.amt
-    var players = this.data.players
+    var zimoIncome = Number(amt) * 3
+    var winnerIncome = Number(amt) * 3
     var tableAmt = this.data.tableAmt
+    var dftTabAmt = 10;
+    var players = this.data.players
+    var btnId = e.target.id
+    var rate = this.data.rate
+
     // 校验数据
     if (amt == null || amt == 0) {
       wx.showToast({
@@ -105,14 +113,15 @@ Page({
       return
     }
 
+    // 计算逻辑
     for (var idx in players) {
       if (idx == winnerIdx) {
-        var plusAmt = 10;
-        if (this.data.rate == 'double') {
-          plusAmt = plusAmt * 2
+        if (rate == 'double') {
+          dftTabAmt = dftTabAmt * 2
         }
-        players[idx].score = Number(players[idx].score) + Number(amt) * 3 - plusAmt
-        tableAmt += plusAmt
+        winnerIncome -= dftTabAmt
+        players[idx].score = Number(players[idx].score) + winnerIncome
+        tableAmt += dftTabAmt
       } else {
         players[idx].score = Number(players[idx].score) - Number(amt)
       }
@@ -125,6 +134,17 @@ Page({
       rate: 'single',
       tableAmt: tableAmt
     })
+
+    // 添加日志
+    var winnerName = players[winnerIdx].name
+    var round = ++this.data.round
+    var text = this.data.text
+    var double = ''
+    if (rate == 'double'){
+      double = text['double']
+    }
+    var gameLog = '第' + round + '局 赢家[' + winnerName + ']' + text[btnId] + double + '[' + amt + ']' + '收入[' + winnerIncome + "] 交台费[" + dftTabAmt + "]"
+    console.log(gameLog)
   },
   zhuachong(e) {
     var winnerIdx = this.data.winnerIdx

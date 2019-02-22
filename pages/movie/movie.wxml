@@ -10,32 +10,33 @@
     </radio-group>
   </view>
   <view class="tableInfo">
-    <radio-group bindchange="rateChange">
       <view class="table">
         <text decode="{{true}}">{{text.tableAmt}}&nbsp;:&nbsp;{{tableAmt}}&nbsp;&nbsp;</text>
-        <radio value="single" checked="{{rate == 'single'}}" />
-        <text decode="{{true}}">{{text.single}}&nbsp;&nbsp;</text>
-        <radio value="double" checked="{{rate == 'double'}}" />
-        <text>{{text.double}}</text>
+        <!-- <radio value="single" checked="{{rate == 'single'}}" />
+        <text decode="{{true}}">{{text.single}}&nbsp;&nbsp;</text> -->
       </view>
-    </radio-group>
   </view>
-  <view class="btn">
+
+  <view class="btnInfo">
     <view>
       <input id="amt" class="amt" value="{{amt}}" bindinput="bindKeyInput" placeholder="{{text.amt}}" />
     </view>
-    <view>
-      <button bindtap='zimo'>{{text.btn1}}</button>
+    <view class="btn">
+      <button id='btn1' bindtap='zimo'>{{text.btn1}}</button>
+      <radio-group bindchange="rateChange">
+        <radio value="double" checked="{{rate == 'double'}}" />
+        <text>{{text.double}}</text>
+      </radio-group>
     </view>
-    <view>
-      <button bindtap='zhuachong'>{{text.btn2}}</button>
-    </view>
-    <view>
+    <view class="btn">
+      <button id='btn2' bindtap='zhuachong'>{{text.btn2}}</button>
+      <view>
       <picker bindchange="bindPickerChange" value="{{loserIdx}}" range="{{players}}" range-key="name">
         <view class="picker">
           <text decode="{{true}}">&nbsp;&nbsp;{{text.loserSel}}：{{players[loserIdx].name}}</text>
         </view>
       </picker>
+    </view>
     </view>
   </view>
 </view>
