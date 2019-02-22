@@ -47,14 +47,14 @@
 }
 
 .btn {
-  border: 3px solid black;
+  /* border: 3px solid black; */
   margin: 10px;
   display: flex;
   align-items: center;
 }
 
 .btn button {
-  border: 3px solid red;
+  /* border: 3px solid red; */
   width: 80px;
   font: 16px arial, sans-serif;
   margin-left: 5px;
