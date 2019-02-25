@@ -4,7 +4,7 @@
       <view class="player" wx:for="{{players}}" wx:for-index="key">
         <radio value="{{key}}" checked="{{key == winnerIdx}}" />
         <input class="pname" id="{{item.id}}" bindinput="bindPnameInput" placeholder="{{item.name}}" />
-        <text decode="{{true}}">{{score}}{{item.score}}</text>
+        <text decode="{{true}}">{{text.score}}{{item.score}}</text>
         <!-- <input value="{{item.score}}" disabled='true' /> -->
       </view>
     </radio-group>
@@ -16,10 +16,10 @@
         <text decode="{{true}}">{{text.single}}&nbsp;&nbsp;</text> -->
     </view>
   </view>
-
   <view class="btnInfo">
-    <view>
-      <input id="amt" class="amt" value="{{amt}}" bindinput="bindKeyInput" placeholder="{{text.amt}}" />
+    <view class="amt">
+      <text decode="{{true}}">输入金额:&nbsp;&nbsp;</text>
+      <input id="amt" value="{{amt}}" bindinput="bindKeyInput" placeholder="{{text.amt}}" />
     </view>
     <view class="btn">
       <view>
@@ -27,8 +27,8 @@
       </view>
       <view>
         <radio-group bindchange="rateChange">
+          <text decode="{{true}}">&nbsp;&nbsp;{{text.double}}&nbsp;</text>
           <radio value="double" checked="{{rate == 'double'}}" />
-          <text>{{text.double}}</text>
         </radio-group>
       </view>
     </view>
@@ -44,5 +44,8 @@
         </picker>
       </view>
     </view>
+  </view>
+  <view class="logInfo">
+    <text>{{gameLogText}}</text>
   </view>
 </view>

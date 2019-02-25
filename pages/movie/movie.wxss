@@ -1,16 +1,16 @@
 .container1 {
-  font: 15px arial, sans-serif;
+  font: 20px arial, sans-serif;
 }
 
 .playerInfo {
   /* border: 3px solid black; */
-  margin: 10px;
+  margin-left: 10px;
 }
 
 .player {
   /* border: 3px solid red; */
   display: flex;
-  margin: 2px;
+  margin: 5px;
   align-items: center;
 }
 
@@ -20,47 +20,66 @@
   margin: 2px;
 }
 
-/* .player > text {
-  border: 1px solid black;
-} */
 .tableInfo {
   /* border: 3px solid black; */
+  margin: 10px;
 }
+
 .table {
   /* border: 3px solid red; */
   display: flex;
-  margin: 10px;
   align-items: center;
 }
 
 .btnInfo {
-  /* width: 300px; */
   /* border: 3px solid black; */
-  margin: 10px;
-  /* display: flex; */
-  /* float: left; */
-  /* flex-direction: row; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  /* flex-flow: row wrap;
+  margin-left: 10px;
+  margin-top: 10px;
+  /* display: flex; *//* float: left; *//* flex-direction: row; *//* align-items: center; *//* justify-content: center; *//* flex-flow: row wrap;
   align-content: flex-start; */
 }
 
 .btn {
-  /* border: 3px solid black; */
-  margin: 10px;
+  /* border: 3px solid black; *//* margin: 10px; */
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .btn button {
   /* border: 3px solid red; */
   width: 80px;
-  font: 16px arial, sans-serif;
-  margin-left: 5px;
+  font: 20px arial, sans-serif;
+  /* margin-left: 5px; */
 }
+
 .amt {
+  /* border: 3px solid red; */
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.amt #amt {
   /* border: 3px solid red; */
   width: 50px;
   font: 16px arial, sans-serif;
+}
+
+.logInfo {
+  /* width: 300px; *//* height: 100px; *//* border: 3px solid black; */
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  /* display: flex; *//* float: left; *//* flex-direction: row; *//* align-items: center; *//* justify-content: center; *//* flex-flow: row wrap;
+  align-content: flex-start; */
+}
+
+.logInfo text {
+  height: 200px;
+  display: block;
+  border: 1px solid gray;
+  overflow-y: auto;
+  overflow-x: scroll;
+  font: 12px arial, sans-serif;
 }
