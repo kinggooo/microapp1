@@ -1,0 +1,119 @@
+.container1 {
+  font: 20px arial, sans-serif;
+}
+
+.playerInfo {
+  /* border: 3px solid black; */
+  margin: 10px;
+  align-items: center;
+}
+
+.playerSel {
+  margin-left: 5px;
+}
+
+.playerInput {
+  margin-left: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.playerInput input {
+  width: 60px;
+}
+
+.table {
+  border: 1px solid darkgray;
+  margin: 10px;
+}
+
+.tr {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /* height: 3rem; */
+  align-items: center;
+}
+
+.td {
+  width: 40%;
+  justify-content: center;
+  text-align: center;
+}
+
+.bg-w {
+  background: snow;
+}
+
+.bg-g {
+  background: #e6f3f9;
+}
+
+.th {
+  width: 40%;
+  /* height: 3rem; */
+  justify-content: center;
+  background: #36f;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.rmBtn {
+  width: 55%;
+  /* height: 30px; */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.tableAmtInfo {
+  /* border: 3px solid black; */
+  margin: 10px;
+}
+
+.tableAmt {
+  /* border: 3px solid red; */
+  display: flex;
+  align-items: center;
+}
+
+.submitBtn {
+  /* border: 3px solid black; *//* margin: 10px; */
+  display: flex;
+  margin: 10px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.submitBtn button {
+  /* border: 3px solid red; *//* width: 180px; */
+  font: 20px arial, sans-serif;
+  /* margin-left: 5px; */
+}
+
+
+/* .btn1 {
+  width: 80%;
+  margin-top: 20rpx;
+  background-color: burlywood;
+  color: white;
+  border-radius: 98rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnImg {
+  margin-right: 8rpx;
+  width: 46rpx;
+  height: 46rpx;
+}
+
+.btn1::after {
+  border-radius: 98rpx;
+  border: 0; 
+} */

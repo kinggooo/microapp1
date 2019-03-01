@@ -1,68 +1,68 @@
 Page({
   data: {
     players: [{
-        name: 'CHN',
+        name: '老韩',
         id: 'p1',
         score: '0'
       },
       {
-        name: 'BRA',
+        name: '老板',
         id: 'p2',
         score: '0'
       },
       {
-        name: 'JPN',
+        name: '老叶',
         id: 'p3',
         score: '0'
       },
       {
-        name: 'ENG',
+        name: '瞿瞿',
         id: 'p4',
+        score: '0'
+      },
+      {
+        name: '台费',
+        id: 'p99',
         score: '0'
       }
     ],
+    playerList: {},
     idToIdx: {
       'p1': 0,
       'p2': 1,
       'p3': 2,
       'p4': 3
     },
-    inputValue: '',
-    amt: '',
+    playerAmt: 0,
     tableAmt: 0,
-    score: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score&nbsp;:&nbsp;",
-    winnerIdx: 0,
-    loserIdx: 0,
-    rate: 'single',
+    playerIdx: 0,
     text: {},
     textCfg: [{
-        btn1: '按钮1',
-        btn2: '按钮2',
+        addBtn: '按钮1',
+        submitBtn: '按钮2',
         single: 'single',
         double: 'double',
         amt: 'amt',
         tableAmt: 'tableAmt',
-        loserSel: 'loserSel',
+        playerSel: 'playerSel',
         score: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;score&nbsp;:&nbsp;",
         dftName: ['玩家1', '玩家2', '玩家3', '玩家4']
       },
       {
-        btn1: '自摸',
-        btn2: '抓冲',
+        addBtn: '添加',
+        submitBtn: '提交数据',
         single: '自摸',
         double: '杠开',
         amt: '金额',
-        tableAmt: '台费',
-        loserSel: '抓冲目标',
+        tableAmt: '输入台费',
+        playerSel: '选择玩家',
         score: "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;收入&nbsp;:&nbsp;",
         dftName: ['东', '南', '西', '北']
       }
     ],
     cfgIdx: 1,
     gameLog: [],
-    gameLogText: '',
-    round: 0,
-    dftTabAmt: 20
+    gameLogText: ''
   },
 
   onLoad: function() {
@@ -70,14 +70,14 @@ Page({
     this.setData({
       text: this.data.textCfg[cfgIdx]
     })
-    var players = this.data.players
-    var text = this.data.text
-    for (var idx in players) {
-      var pname = "players[" + idx + "].name"
-      this.setData({
-        [pname]: text.dftName[idx]
-      })
-    }
+    // var players = this.data.players
+    // var text = this.data.text
+    // for (var idx in players) {
+    //   var pname = "players[" + idx + "].name"
+    //   this.setData({
+    //     [pname]: text.dftName[idx]
+    //   })
+    // }
   },
   bindKeyInput(e) {
     this.setData({
@@ -226,9 +226,31 @@ Page({
       rate: e.detail.value
     })
   },
-  bindPickerChange(e) {
+  playerChange(e) {
     this.setData({
-      loserIdx: e.detail.value
+      playerIdx: e.detail.value
     })
-  }
+  },
+  addPlayer(e) {
+    var player = this.data.players[this.data.playerIdx]
+    player.score = this.data.playerAmt
+    var playerList = this.data.playerList
+    playerList[player.id] = player
+    this.setData({
+      playerList: playerList
+    })
+  },
+  removePlayer(e) {
+    var playerList = this.data.playerList
+    var idx = e.target.id
+    delete playerList[idx]
+    this.setData({
+      playerList: playerList
+    })
+  },
+  playerAmtInput(e) {
+    this.setData({
+      [e.target.id]: e.detail.value
+    })
+  },
 })

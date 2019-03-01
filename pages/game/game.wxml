@@ -1,0 +1,48 @@
+<view class="container1">
+  <view class="playerInfo">
+    <view class="playerSel">
+      <picker bindchange="playerChange" value="{{playerIdx}}" range="{{players}}" range-key="name">
+        <view>
+          <text decode="{{true}}">{{text.playerSel}}：{{players[playerIdx].name}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="playerInput">
+      <text decode="{{true}}">输入金额：</text>
+      <input class="input" id="playerAmt" bindinput="playerAmtInput" value="{{playerAmt}}" />
+      <button id='addBtn' bindtap='addPlayer'>{{text.addBtn}}</button>
+    </view>
+  </view>
+  <view class="table">
+    <view class="tr bg-w">
+      <view class="th">操作</view>
+      <view class="th">姓名</view>
+      <view class="th ">金额</view>
+    </view>
+    <block wx:for="{{playerList}}" wx:key="{{code}}">
+      <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td">
+          <button class="rmBtn" id="{{item.id}}" bindtap='removePlayer'>
+            <view>删除</view>
+          </button>
+        </view>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.score}}</view>
+      </view>
+      <view class="tr" wx:else>
+        <view class="td">
+          <button class="rmBtn" id="{{item.id}}" bindtap='removePlayer'>
+            <view>删除</view>
+          </button>
+        </view>
+        <view class="td">{{item.name}}</view>
+        <view class="td">{{item.score}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="submitBtn">
+    <view class="btn">
+      <button id='submitBtn' bindtap='submit'>{{text.submitBtn}}</button>
+    </view>
+  </view>
+</view>
